@@ -1,0 +1,8 @@
+name: Single event time module
+type: module
+description: 'A custom module that displays time to a single event, if event is currently happening or if event has already ended'
+core_version_requirement: ^9
+dependencies:
+ - drupal:block
+ - drupal:config
+

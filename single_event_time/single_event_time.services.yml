@@ -1,0 +1,3 @@
+services:
+  single_event_time.single_event_time_service:
+    class: Drupal\single_event_time\Services\SingleEventTimeService
