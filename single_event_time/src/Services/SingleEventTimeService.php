@@ -9,12 +9,6 @@ use Drupal\Core\Datetime\DrupalDateTime;
 
 class SingleEventTimeService{
   public function getEventTime($node = null){
-    if(!($node instanceof NodeInterface)){
-      $current_path = Drupal::request()->getRequestUri();
-      $path_args = explode('/', $current_path);
-      $nid = array_pop($path_args);
-      $node = Drupal::entityTypeManager()->getStorage('node')->load($nid);
-    }
     if(!($node instanceof NodeInterface) || $node->getType() != 'event') { return []; }
     $current_time = new DateTime();
     $timezone = new DateTimeZone(Drupal::config('system.date')->get('timezone')['default']);
